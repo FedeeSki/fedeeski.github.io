@@ -13,10 +13,10 @@ order: 4
 
 Contattatemi dalla mia mail o dal mio sito:
 
-```bash
-federicoschianchi2004@gmail.com
+```plaintext
+federico.schianchi.blog@gmail.com
 ```
+<br>
 
-Check my site: [fede.app](https://fede.app)
 
-Support me: [Buy me a coffe 😊 ](https://buymeacoffee.com/fedeschianchi)
+| Link donazione: <br> [<img src="https://downloads.intercomcdn.com/i/o/234105/0d29fbdf17e257cdfc2ba1ba/7103925065c5e9bd6ac7ac9efd453fd7.png" alt="Donazione" style="width:200px;"/>](https://buymeacoffee.com/fedeschianchi) | Sito personale: <br> [<img src="https://fede.app/assets/logo-a6373d30.svg" alt="Donazione" style="width:100px;"/>](https://fede.app)
