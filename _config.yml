@@ -19,14 +19,14 @@ title: Federico's blog  # the main title
 tagline: "'La felicità della tua vita dipende dalla qualità dei tuoi pensieri.' ~ Marco Aurelio" # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Il blog personale di Federico Schianchi: riflessioni, pensieri e appunti su tecnologia, filosofia e vita quotidiana.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://federick2104.github.io/"
+url: "https://fedeeski.github.io/"
 
 github:
-  username: federick2104 # change to your github username
+  username: fedeeski # your updated github username
 
 twitter:
   username:  # change to your twitter username
@@ -35,11 +35,11 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Federico Schianchi
-  email: me@gmail.com # change to your email address
+  email: federico.schianchi.blog@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://fede.app # change to your twitter homepage
-    - https://github.com/federick2104 # change to your github homepage
+    - https://github.com/fedeeski # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
