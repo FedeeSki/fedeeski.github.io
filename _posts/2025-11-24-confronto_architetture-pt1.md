@@ -36,7 +36,7 @@ Parallelamente, la nostra comprensione dei meccanismi neurali alla base della co
   // Questa è la funzione che useremo
   function drawMooreChart() {
     // Il percorso del file JSON (che ora sappiamo essere corretto)
-    var spec = "{{ '/assets/json/moore_law_divergence.json' | relative_url }}";
+    var spec = "https://raw.githubusercontent.com/FedeeSki/fedeeski.github.io/refs/heads/main/assets/json/moore_law_divergence.json";
     var embedOptions = {
       "mode": "vega-lite",
       "width": "container",
@@ -74,8 +74,6 @@ Questo lavoro si propone quindi di costruire un ponte tra neuroscienze computazi
 
 Ora per comprendere in modo concreto le differenze tra questi due mondi, è utile analizzare le loro architetture di base: il classico modello di **von Neumann**, che ha guidato l’informatica per oltre 70 anni.
 ## **Il paradigma classico: Von Neumann**
-
-### **L'Eleganza dell'astrazione (Von Neumann)**
 
 <figure style="margin: 2rem 0; text-align: center;">
   

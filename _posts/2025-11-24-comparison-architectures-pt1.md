@@ -37,7 +37,7 @@ In parallel, our understanding of the neural mechanisms underlying human cogniti
   // Questa è la funzione che useremo
   function drawMooreChart() {
     // Il percorso del file JSON (che ora sappiamo essere corretto)
-    var spec = "{{ '/assets/json/moore_law_divergence.json' | relative_url }}";
+    var spec = "https://raw.githubusercontent.com/FedeeSki/fedeeski.github.io/refs/heads/main/assets/json/moore_law_divergence.json";
     var embedOptions = {
       "mode": "vega-lite",
       "width": "container",
@@ -75,8 +75,6 @@ This work therefore aims to build a bridge between computational neuroscience an
 To concretely understand the differences between these two worlds, it is useful to examine their foundational architectures: the classic **Von Neumann** model, which has guided computing for more than 70 years.
 
 ## **The Classical Paradigm: Von Neumann**
-
-### **The Elegance of Abstraction (Von Neumann)**
 
 <figure style="margin: 2rem 0; text-align: center;">
   
