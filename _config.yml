@@ -216,6 +216,11 @@ exclude:
   - LICENSE
   - "*.config.js"
   - package*.json
+  - _scripts/
+  - venv/
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
 
 jekyll-archives:
   enabled: [categories, tags]
