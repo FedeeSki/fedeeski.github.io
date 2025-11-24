@@ -31,11 +31,8 @@ Parallelamente, la nostra comprensione dei meccanismi neurali alla base della co
 
 <div id="grafico-moore" style="width: 100%; max-width: 900px; margin: 0 auto; overflow-x: auto;">
   </div>
-<script>
-  
-  // Questa è la funzione che useremo
+<script type="text/javascript">
   function drawMooreChart() {
-    // Il percorso del file JSON (che ora sappiamo essere corretto)
     var spec = "https://raw.githubusercontent.com/FedeeSki/fedeeski.github.io/refs/heads/main/assets/json/moore_law_divergence.json";
     var embedOptions = {
       "mode": "vega-lite",
@@ -43,13 +40,9 @@ Parallelamente, la nostra comprensione dei meccanismi neurali alla base della co
       "height": 450,
       "actions": false
     };
-
-    // Chiama vegaEmbed sull'ID del div
     vegaEmbed('#grafico-moore', spec, embedOptions)
-      .catch(console.error); // Invia eventuali errori alla console
+      .catch(console.error); 
   }
-
-  // Esegui quando il DOM è pronto
   document.addEventListener('DOMContentLoaded', drawMooreChart);
 
 </script>
