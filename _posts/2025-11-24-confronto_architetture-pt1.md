@@ -168,7 +168,7 @@ for layer in network:
 ```
 
 
-La **Backpropagation globale**: ogni peso dipende dall'errore finale, richiede **forward pass completa** + **backward pass completa** quindi computazionalmente costoso: O(n) per tutti i parametri. **Lock-step learning**: tutta la rete deve "fermarsi" per l'aggiornamento. <br>
+La **Backpropagation globale**: ogni peso dipende dall'errore finale, richiede **forward pass completa** + **backward pass completa** quindi computazionalmente costoso: $\mathbf{O(n)}$ per tutti i parametri. **Lock-step learning**: tutta la rete deve "fermarsi" per l'aggiornamento. <br>
 
 
 Per i Dendriti il Fine Tuning è “**ultralocale**”:
