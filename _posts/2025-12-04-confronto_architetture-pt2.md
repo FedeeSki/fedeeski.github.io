@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Confronto tra Architettura Informatica e Biologica (Pt.2)
-date: 2024-12-24
+date: 2024-12-04
 categories: [Essay]
 tags: [paper ,scientifico, riflessioni] 
 ---
