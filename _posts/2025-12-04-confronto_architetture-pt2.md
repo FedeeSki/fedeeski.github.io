@@ -30,7 +30,7 @@ Ci saranno un totale di 4.294.967.296 byte x 8 = 34.359.738.368 bit. <br>
 
 Ognuno di questi **bit** è memorizzato in una **"cella di storage"** fisica. Queste celle di storage sono implementate con strutture diverse (ad esempio **6T**, cioè 6 transistor per **bit**, o **1T1C**, cioè 1 transistor + 1 condensatore per **bit**), a seconda che sia SRAM o DRAM.
 
-Questa distinzione fisica spiega perché le cache (SRAM, 6T) sono molto più veloci,  mentre la RAM di sistema (DRAM, 1T1C) è più densa ed economica ma deve essere periodicamente rinfrescata.".
+Questa distinzione fisica spiega perché le cache (SRAM, 6T) sono molto più veloci,  mentre la RAM di sistema (DRAM, 1T1C) è più densa ed economica ma deve essere periodicamente refreshata..
 
 
 #### **Bus di indirizzi** 
