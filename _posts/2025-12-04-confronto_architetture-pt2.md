@@ -1,46 +1,43 @@
 ---
 layout: post
 title: Confronto tra Architettura Informatica e Biologica (Pt.2)
-date: 2024-12-04
+date: 2025-12-03
 categories: [Essay]
 tags: [paper ,scientifico, riflessioni] 
 ---
 
-## **Random Acces Memory (RAM) e Memoria di lavoro biologica : Capacità e Limiti**
+## **Random Access Memory (RAM) e Memoria di lavoro biologica : Capacità e Limiti**
 
-
-
+Nella Parte 1 abbiamo visto come il cervello calcola (il neurone). <br> Ora affrontiamo il problema di dove mette i dati, come trasforma il "**caos**" in conoscenza.
 
 ### **RAM: Le celle di memoria** 
 
-La capacità della RAM si misura in **byte** limitata solo dalla tecnologia fisica. 
-
+La capacità della RAM si misura in **byte** ed è limitata principalmente dalla tecnologia fisica, ma anche dall’architettura del sistema (controller di memoria, schema di indirizzamento).
 
 La RAM è organizzata in celle (o locazioni) ognuna capace di mantenere una quantità fissa di dati, ad esempio 1 byte, ogni cella quindi ha un indirizzo univoco, che funziona (semplificando molto) come il numero civico di una casa.
-Nella RAM in un sistema a 64 bit, un indirizzo fisico può variare in base all’architettura specifica e alla quantità di RAM, ma è sempre rappresentato da un valore di 64 bit (numero che richiede 64 cifre binarie) come “0x1234567890ABCDEF” che rappresenta come già detto un’ubicazione specifica all’interno della memoria fisica del computer. Per puro esempio fittizio, “via Roma” potrebbe diventare “0x56696120526F6D61”. 
 
->*“Questo è un indirizzo testuale perché i suoi bit codificano una parola leggibile.* <br>
-*Un indirizzo di RAM è invece solo un numero, che il computer usa come coordinate interne.”*
+In una CPU a 64 bit, gli indirizzi possono **teoricamente** essere lunghi 64 bit, ma nei sistemi reali l’indirizzamento fisico effettivo è spesso tra 36 e 52 bit (per limiti del memory controller e del sistema operativo). A scopo divulgativo diremmo che sono lunghi 64 bit.
 
-Un’altro esempio utile può essere contare le celle: <br>
 
+Un esempio utile può essere contare le celle: <br>
+(Calcolo a scopo illustrativo per mostrare quanti bit fisici vengono effettivamente memorizzati nelle celle).
 
 Supponiamo di avere 4 GB (4.294.967.296 byte) di RAM, disposti come parole a 64 bit. <br>
 Poiché ogni parola (word) è di 8 byte, ci saranno **4.294.967.296 byte / 8 byte per parola = 536,9 milioni di parole** da 64 bit.  
 Ci saranno un totale di 4.294.967.296 byte x 8 = 34.359.738.368 bit. <br>
+
+>"Questo semplice calcolo serve solo a mostrare come la memoria fisica sia composta da un enorme numero di celle elementari, ciascuna memorizzante un singolo bit."
+
 Ognuno di questi **bit** è memorizzato in una **"cella di storage"** fisica. Queste celle di storage sono implementate con strutture diverse (ad esempio **6T**, cioè 6 transistor per **bit**, o **1T1C**, cioè 1 transistor + 1 condensatore per **bit**), a seconda che sia SRAM o DRAM.
 
 Questa distinzione fisica spiega perché le cache (SRAM, 6T) sono molto più veloci,  mentre la RAM di sistema (DRAM, 1T1C) è più densa ed economica ma deve essere periodicamente rinfrescata.".
-
-**{ fare immagini confronto DRAM e SRAM }**
-
 
 
 #### **Bus di indirizzi** 
 
 La CPU invia l’indirizzo della cella da usare attraverso il bus di indirizzi (un insieme di linee elettriche o meglio conduttori che trasportano segnali 0 e 1 tra CPU e RAM). Se il bus di indirizzi ha $\mathbf{n}$ linee, si possono distinguere $\mathbf{2^n}$ indirizzi diversi.
 
-Es: 32 linee = $\mathbf{2^32}$ = **4GB** di spazio utilizzabile.
+Es: 32 linee = $\mathbf{2^{32}}$ = **4GB** di spazio utilizzabile.
 
 
 #### **Bus dati**
@@ -48,12 +45,17 @@ Es: 32 linee = $\mathbf{2^32}$ = **4GB** di spazio utilizzabile.
 Una volta scelta la “casa” i dati passano attraverso il bus dati, dopo la CPU fa operazioni di lettura e scrittura sulla cella in $\mathbf{O(1)}$ costante per ogni locazione.
 
 
+**In modo metaforico, con una piccola "Nota culturale”:**
 
 >*"L'architettura di Von Neumann si fonda sul verdetto assoluto di Parmenide: **Essere** (1) o **Non Essere** (0). <br> Un unico, semplice principio per un universo digitale. <br> L'architettura neuromorfica, al contrario, pianta un giardino di infinite seeds biologiche, dove il calcolo non è un verdetto, ma un **ecosistema in divenire.**"*
 
 ---
 
 ### **Memoria Biologica, Capacità: 7±2 vs 4±1?**
+
+Mentre la RAM è un magazzino passivo, la memoria biologica è attiva.
+Il limite "7±2" si applica solo a specifici compiti verbali sequenziali e non rappresenta un limite generale della memoria di lavoro.
+
 
 #### **(Teoria di Miller ) Perchè Miller aveva Torto?** 
 
@@ -85,7 +87,7 @@ La WM ha circa 4 slot ma, ogni slot può contenere 1 chunk (semplice o complesso
 <figure style="margin: 2rem 0; text-align: center;">
   
   <img src="{{ '/assets/imgs/NvsE.svg' | relative_url }}" 
-       alt="Diagramma Architettura Neuromorfica"
+       alt="Tabella slot memoria lavoro"
        style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
   <figcaption style="font-style: italic; font-size: 1em; color: #555; margin-top: 10px; line-height: 1.4;">
     <strong>“Non nasciamo con i chunks, vengono costruiti con l’esperienza”</strong><br>
@@ -116,8 +118,7 @@ Prima di tutto si cominciano a formare grazie all’esposizione ripetuta ad un *
 Nello **Stato iniziale**, ci sono **3 elementi separati**, codificati in neuroni distinti: <br> 
 {Neurone A: “**U**” }; {Neurone B: “**N**” }; {Neurone C: “**I**” }.
 
-Non c’è nessuna connessione forte tra loro
-
+Non c’è nessuna connessione forte tra loro.
 
 
 #### 2) **Ripetizione e rafforzamento sinaptico**
@@ -146,7 +147,7 @@ for esposizione in range(ripetizioni):
 
 #### 3) **Long term potentiation (LTP), meccanismo molecolare**
 
-Questo meccanismo (approfondendolo molto poco) parte con la **coincidenza temporale** (dai 20-100 ms), tra neuroni pre e post sinaptici.<br> Poi si attivano i recettori **NMDA**, a seguire si una un ingresso massiccio di $\mathbf{Ca^{2+}}$ nel neurone post sinaptico, in questo modo viene stimolato fortemente.  <br>
+Questo meccanismo (approfondendolo molto poco) parte con la **coincidenza temporale** (dai 20-100 ms), tra neuroni pre e post sinaptici.<br> Poi si attivano i recettori **NMDA**, a seguire si verifica un ingresso massiccio di $\mathbf{Ca^{2+}}$ nel neurone post sinaptico, in questo modo viene stimolato fortemente.  <br>
 Questo calcio che entra nel neurone, **attiva** delle proteine speciali chiamate **chinasi**, queste funzionano come degli “**interruttori molecolari**” che attivano altri processi nella cellula modificando altre proteine esistenti o attivando la sintesi di nuove. <br> In pratica traducono il segnale elettrico in **cambiamenti biochimici duraturi**. Questo fenomeno delle chinasi è chiamato “**Cascata di chinasi**”.
 
 I **recettori AMPA** sono i recettori che ricevono il segnale eccitatorio dal neurone presinaptico. Dopo la cascata di chinasi, la cellula post-sinaptica aggiunge più recettori AMPA sulla propria membrana. Quindi la sinapsi diventa più **sensibile**, ogni futuro segnale produrrà un risultato più forte. <br>
@@ -158,6 +159,8 @@ Questo significa che si creano nuove connessioni fisiche o si rafforzano quelle 
 
 
 **Vari tempi del processo:**
+
+I tempi (minuti-ore) sono indicativi: cambiano molto per specie, area corticale e protocolli sperimentali.
 
 **0-1 min: Early-LTP** (fosforilazione recettori esistenti) <br>
 **1-3 ore: Late-LTP** (sintesi proteica, crescita spine) <br>
@@ -186,8 +189,11 @@ Il cervello raggruppa elementi separati in **unità significative** più grandi 
   <img src="{{ '/assets/imgs/Chase&Simon.svg' | relative_url }}" 
        alt="MeccanismiNDE"
        style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+   <figcaption style="font-style: italic; font-size: 1em; color: #555; margin-top: 10px; line-height: 1.4;">
+      <a href="https://andymatuschak.org/prompts/Chase1973.pdf" target="_blank"><strong>Perception in Chess</strong></a><br>
+  </figcaption>
 </figure>
-[Link al paper in questione](https://andymatuschak.org/prompts/Chase1973.pdf)
+
 
 #### **Statistical learning**
 
@@ -203,7 +209,7 @@ Hanno estratto probabilità transizionali.
 #### **Monitoraggio delle co-occorrenze**
 
 Ogni volta che due stimoli (A e B) si presentano **vicini nel tempo o nello spazio**, il cervello registra la loro **co-occorrenza**, cioè il fatto che tendono ad apparire insieme. <br>
-Con l’esperienza, questa informazione diventa **una misura di probabilità condizionata**, del tipo:  $\mathbf{P(B|A)}$ = probabilità che B segua A.
+Con l’esperienza, questa informazione diventa **una misura di probabilità condizionata**, del tipo: <br> $\mathbf{P(B|A)}$ = probabilità che B segua A.
 
 Se questa probabilità è **alta (vicina a 1)**, il cervello interpreta A e B come **unità funzionalmente legate**, quindi come unica entità percettiva e cognitiva. <br> La prevedibilità fa da “**collante**” neurale, le connessioni sinaptiche tra A e B vengono rafforzate.
 Questo meccanismo avviene sia nei livelli sensoriali, sia nei livelli concettuali.
@@ -212,10 +218,9 @@ Questo meccanismo avviene sia nei livelli sensoriali, sia nei livelli concettual
 
 * **Gangli basali** per apprendimento sequenziale e statistico, per imparare pattern temporali, per filtrare le sequenze che hanno alta coerenza temporale e alta ricompensa predetta. La **dopamina** è fondamentale per segnalare la precisione della predizione.
 
-* **Cervelletto** per il timing cognitivo, affina la precisione cognitiva e temporale del chunking.
+* **Cervelletto** per il timing cognitivo, affina la precisione temporale della sequenza, alcune teorie suggeriscono un ruolo anche nel chunking, benché non ci sia ancora pieno consenso.
 
 * **Corteccia prefrontale ventromediale** tecnicamente vmPFC, coinvolta nell’integrazione del valore e della probabilità, ovvero se una sequenza o un pattern è affidabile, prevedibile o vantaggioso, la vmPFC ne rafforza la traccia mnemonica.
-
 
 
 ### **Error-driven learning (Rescorla-Wagner)**
@@ -237,7 +242,7 @@ for ogni esposizione:
 
 ```
 
-Questo pseudo codice sarebbe la versione “**computazionale**” del modello di Rescorla-Wagner (1972), che ha fatto da base teorica per tutto il **RL** (Reinforced learning) moderno (inclusa la backpropagation, in un certo senso). <br> Quest’ultimo si è poi rivelato una descrizione molto accurata di come i neuroni apprendono in generale.
+Questo pseudo codice sarebbe la versione “**computazionale**” del modello di Rescorla-Wagner (1972), che ha fatto da base teorica per tutto il **RL** (Reinforcement learning) moderno (inclusa la backpropagation, precisamente ne condivide lo spirito generale della minimizzazione dell’errore, restando sempre una analogia euristica, non un'uguaglianza). <br> Quest’ultimo si è poi rivelato una descrizione molto accurata di come i neuroni apprendono in generale.
 
 #### Ruolo della **Dopamina**:
 
@@ -272,7 +277,7 @@ Il modello interno è ben **allineato con la realtà**, l’**associazione è st
 
 ### **Consolidamento nella memoria a lungo termine**
 
-Un riflessione abbastanza riassuntiva, ma tecnica dei meccanismi principali di *consolidamento biologico*, con punti rilevamenti per la progettazione di sistemi neuromorfici e architetturali.
+Una riflessione (riassuntiva), ma tecnica dei meccanismi principali di *consolidamento biologico*, con punti rilevanti per la progettazione di sistemi neuromorfici e architetturali.
 
 
 #### **Panorama Sintetico:**
@@ -285,7 +290,7 @@ Riorganizzazione e trasferimento delle rappresentazioni tra *strutture* (es. tra
 *Formazione o crescita delle spine dendritiche* (della quale abbiamo parlato qualche paragrafo fa durante la LTP) cambiamenti trascrizionali che stabilizzano a lungo termine.
 
 
-### **Consolidamento sistematico & Replay**
+### **Consolidamento sistemico & Replay**
 
 Complementary learning system (***CLS*** ), teoria che spiega perché il cervello usa 2 sistemi: <br>
 * **Ippocampo**: apprendimento rapido, indicizzazione di episodi, alta plasticità.
@@ -319,18 +324,21 @@ I **neuromodulatori** come la dopamina, modulano se e quando consolidare, **segn
 ## **Implicazioni per la computazione neuromorfica**
 
 **Von Neumann**: consolidamento è una copia **esplicita**, (RAM -> Storage). Operazione deterministica, separata e spesso sincronizzata. <br>
-**Biologia / Neuromorfica**: consolidamento è una **trasformazione adattiva e distribuita**, le memoria vengono ristimate e riorganizzate integrandole. <br> Dunque è un processo continuo, regolato localmente, modulato globlamente, e sostenuto da offline replay.
+**Biologia / Neuromorfica**: consolidamento è una **trasformazione adattiva e distribuita**, le memoria vengono ristimate e riorganizzate integrandole. <br> Dunque è un processo continuo, regolato localmente, modulato globalmente, e sostenuto da offline replay.
 
 ### Aspetti più importanti da emulare:
 
 #### **Doppio canale di apprendimento**:
 
-Memorie temporanee in strutture ad alta plasticità + trasferimento graduale a storage NVM (memristive arrays o weight banks non volatili). [Approfondimento](https://www.nature.com/articles/s41563-019-0291-x)
+Memorie temporanee in strutture ad alta plasticità + trasferimento graduale a storage NVM (memristive arrays o weight banks non volatili). 
 
 <figure style="margin: 2rem 0; text-align: center;">
   <img src="{{ '/assets/imgs/SNN_syn.webp' | relative_url }}" 
        alt="SNN synapses"
        style="max-width: 80%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <figcaption style="font-style: italic; font-size: 1em; color: #555; margin-top: 10px; line-height: 1.4;">
+        <a href="https://www.nature.com/articles/s41563-019-0291-x" target="_blank"><strong> Memristive crossbar arrays for brain-inspired computing</strong></a><br>
+  </figcaption>
 </figure>
 
 #### **Replay offline**:
@@ -338,9 +346,12 @@ Memorie temporanee in strutture ad alta plasticità + trasferimento graduale a s
 Meccanismi di riattivazione sequenziale (on-chip or scheduled) per consolidare pesi a lungo termine (analogo a experience replay / distillation in ML).
 
 <figure style="margin: 2rem 0; text-align: center;">
-  <img src="{{ '/assets/imgs/' | relative_url }}" 
+  <img src="{{ '/assets/imgs/replay_offline.webp' | relative_url }}" 
        alt="Replay offline"
-       style="max-width: 80%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <figcaption style="font-style: italic; font-size: 1em; color: #555; margin-top: 10px; line-height: 1.4;">
+      <a href="https://www.researchgate.net/publication/51479966_An_opportunistic_theory_of_cellular_and_systems_consolidation" target="_blank"><strong>An opportunistic theory of cellular and systems consolidation</strong></a><br>
+  </figcaption>
 </figure>
 
 #### **Two-timescale plasticity**:
@@ -351,10 +362,14 @@ Modelli che combinano tracce veloci (contatori temporali) con tracce lente (stab
 
 Flag locali che indicano “ready to stabilize”. Solo le sinapsi taggate possono acquisire proteine/aggiornamenti globali.
 
+
 <figure style="margin: 2rem 0; text-align: center;">
-  <img src="{{ '/assets/imgs/' | relative_url }}" 
+  <img src="{{ '/assets/imgs/synaptic_tag.webp' | relative_url }}" 
        alt="Synaptic tagging emulation"
-       style="max-width: 80%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <figcaption style="font-style: italic; font-size: 1em; color: #555; margin-top: 10px; line-height: 1.4;">
+      <a href="https://www.researchgate.net/publication/312140429_'Tagging'_along_memories_in_aging_Synaptic_tagging_and_capture_mechanisms_in_the_aged_hippocampus" target="_blank"><strong>‘Tagging’ along memories in aging: Synaptic tagging and capture mechanisms in the aged hippocampus</strong></a><br>
+  </figcaption>
 </figure>
 
 Questo diagramma illustra come una **stimolazione debole** (che induce "Early-LTP") imposta un "tag" (etichetta) locale sulla sinapsi. Successivamente, una **stimolazione forte** (in un'altra sinapsi o nel corpo cellulare) genera proteine di plasticità (l'aggiornamento globale). <br> Queste proteine viaggiano in tutta la cellula, ma solo la sinapsi precedentemente "taggata" può catturarle, convertendo così la sua traccia temporanea in un potenziamento stabile e a lungo termine ("Late-LTP")
@@ -402,7 +417,7 @@ dopamine_trace = dopamine_trace * decay_rate + external_reward_signal
 Inoltre per la sua **selettività**: solo i percorsi neurali **attivi subito prima** del segnale di ricompensa vengono consolidati. I percorsi irrilevanti non vengono modificati.
 
 
-Negli **HW neuromorfici** (come i chip di Intel Loihi o IBM TrueNorth), questi algoritmi non sono software che gira su una CPU, ma sono implementati direttamente nel circuito (**embedded** nel HW):
+Negli **Hardware neuromorfici** (come i chip di Intel Loihi o IBM TrueNorth), questi algoritmi non sono software che gira su una CPU, ma sono implementati direttamente nel circuito (**embedded** nel hardware):
 
 * **Segnale di Broadcast**: Un singolo segnale (una linea di tensione) può essere diffuso attraverso il chip per rappresentare: `dopamine_trace` o `ach_level`.
 
@@ -416,9 +431,13 @@ Negli **HW neuromorfici** (come i chip di Intel Loihi o IBM TrueNorth), questi a
 >Il **gating neuromodulatorio** fornisce un meccanismo **elegante** e **biologicamente plausibile** per conferire alle reti neuromorfiche proprietà di adattamento, efficienza e robustezza che sono essenziali per operare in ambienti **reali**, **non strutturati** e con **risorse limitate**.
 
 
-Inserire finale e conclusioni per la Pt.3
+## **Conclusioni: Dalla biologia al Silicio**
 
+In questa seconda parte è stata esplorata la memoria biologica, evidenziando come non sia un semplice magazzino statico di indirizzi e byte (come la RAM), ma un processo attivo, chimico e dinamico. Si è osservato come il cervello non "salvi" i dati, ma li ricostruisca attraverso regole di plasticità come la STDP e il consolidamento notturno.
 
+Ma come tradurre questa eleganza biologica in macchine reali? Come costruire chip che non soffrano del collo di bottiglia di Von Neumann e che integrino calcolo e memoria nello stesso dispositivo fisico?
+
+Nella Parte 3 (l'ultima di questa serie), l'analisi abbandonerà la biologia per tornare all'ingegneria. Verrà esaminato come i moderni Transformer stiano cercando di evolversi e come l'hardware neuromorfico (attraverso i Memristor e gli Spiking Neural Networks) stia finalmente tentando di realizzare il sogno di una macchina che pensa come un cervello, invece di calcolare come una calcolatrice.
 
 <script type="text/javascript">
   window.MathJax = {
